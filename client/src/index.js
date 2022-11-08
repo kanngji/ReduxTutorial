@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import { Provider } from "react-redux";
+import store from "./store";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,14 +11,16 @@ import Footer from "./components/Footer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    {/* 모든 창에 header와 footer를 넣기위해서 */}
-    <Header />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}></Route>
-      </Routes>
-    </BrowserRouter>
-    <Footer />
+    <Provider store={store}>
+      {/* 모든 창에 header와 footer를 넣기위해서 */}
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}></Route>
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </Provider>
   </>
 );
 
