@@ -1,34 +1,20 @@
 import "./App.css";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { useSelector, useDispatch } from "react-redux";
-
+import Footer from "./components/Footer";
+import { Routes, Route, Link } from "react-router-dom";
+import Board from "./screen/Board";
+import Diary from "./screen/Diary";
+import Main from "./screen/Main";
+import Login from "./components/Login";
 function App() {
-  const dispatch = useDispatch();
-
-  const { value } = useSelector((state) => state.value);
-  const { count } = useSelector((state) => state.count);
-
-  const addValue = () => {
-    dispatch({ type: "increment" });
-  };
-  const subValue = () => {
-    dispatch({ type: "decrement" });
-  };
-  const resetValue = () => {
-    dispatch({ type: "reset" });
-  };
-  const pushButton = () => {
-    dispatch({ type: "push" });
-  };
   return (
     <>
-      <div>value: {value}</div>
-      <button onClick={addValue}> + </button>
-      <button onClick={subValue}> - </button>
-      <button onClick={resetValue}> reset </button>
-      <div>count: {count}</div>
-      <button onClick={pushButton}> click </button>
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/board" element={<Board />}></Route>
+        <Route path="/diary" element={<Diary />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+      </Routes>
     </>
   );
 }

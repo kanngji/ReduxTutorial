@@ -1,25 +1,28 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
-function Header() {
+import { Routes, Route, Link } from "react-router-dom";
+import App from "../App";
+import Board from "../screen/Board";
+export default function Header() {
   return (
     <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">MyFavPick</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Board</Nav.Link>
-          </Nav>
-          <Nav className="me-auto">
-            <Nav.Link href="#login">Sign in</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+      <header>
+        <header-left>
+          <h1>
+            <Link to="/">홈</Link>
+          </h1>
+          <div>
+            <Link to="/board">게시판</Link>
+            <Link to="/diary">개발일지</Link>
+          </div>
+        </header-left>
+        <header-right>
+          <div>
+            <Link to="/login">로그인</Link>
+          </div>
+        </header-right>
+      </header>
     </>
   );
 }
-
-export default Header;

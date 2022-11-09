@@ -8,18 +8,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Board from "./screen/Board";
+import Diary from "./screen/Diary";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     <Provider store={store}>
       {/* 모든 창에 header와 footer를 넣기위해서 */}
-      <Header />
+
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />}></Route>
-        </Routes>
+        <Header />
+        <App />
+
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </Provider>
   </>
 );
