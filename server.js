@@ -9,6 +9,7 @@ const app = express();
 const PORT = 5000;
 
 const boardRoutes = require("./routes/board");
+const userRoutes = require("./routes/user");
 
 // middle ware
 app.use(express.json());
@@ -24,7 +25,7 @@ app.use("/board", boardRoutes);
 // 개발 게시판
 // app.use("/diary",diaryRoutes);
 // 로그인, 회원가입
-// app.use("/users",userRoutes);
+app.use("/user", userRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
