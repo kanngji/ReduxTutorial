@@ -10,6 +10,18 @@ const loginUser = async (req, res) => {
     .catch((err) => console.log(err));
 };
 
+// register
+const signupUser = async (req, res) => {
+  User.create({
+    email: req.body.email,
+    password: req.body.password,
+  })
+    .then((doc) => console.log(doc))
+    .catch((err) => console.log(err));
+};
+
+
 module.exports = {
   loginUser,
+  signupUser,
 };
