@@ -6,6 +6,7 @@ import Board from "./screen/Board";
 import Diary from "./screen/Diary";
 import Main from "./screen/Main";
 import Login from "./components/Login";
+import Signup from "./components/Signup";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/board" element={<Board />}></Route>
         <Route path="/diary" element={<Diary />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
     </>
   );

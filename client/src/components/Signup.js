@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
     <>
-      <div className="container_login">
+      <div className="container_signup">
         <form className="signup">
-          <h1>Login</h1>
+          <h1>Register</h1>
           <input
             type="text"
             onChange={(e) => setEmail(e.target.value)}
@@ -22,9 +22,9 @@ export default function Login() {
             value={password}
             placeholder="Password"
           />
-          <button>로그인</button>
+          <button>가입하기</button>
           <button>
-            <Link to="/signup">회원가입</Link>
+            <Link to="/login">로그인하러 가기</Link>
           </button>
         </form>
       </div>
